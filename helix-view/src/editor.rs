@@ -790,6 +790,7 @@ pub enum WhitespaceRenderValue {
     None,
     // TODO
     // Selection,
+    AfterWhitespace,
     All,
 }
 

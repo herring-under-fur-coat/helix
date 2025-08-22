@@ -1,0 +1,14 @@
+theme = "term16_light"
+
+[editor]
+line-number = "relative"
+mouse = true
+bufferline = "always"
+rulers = [80, 100]
+idle-timeout = 0
+
+[editor.lsp]
+auto-signature-help = false
+
+[editor.whitespace]
+render = "after-whitespace"
