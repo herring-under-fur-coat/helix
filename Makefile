@@ -3,6 +3,7 @@ install:
 	rm -rf ~/.config/helix/runtime
 	cp -r runtime ~/.config/helix/runtime
 	cp -r dotfiles/helix-config.toml ~/.config/helix/config.toml
+	cp -r dotfiles/alacritty-config.toml ~/.config/alacritty/alacritty.toml
 
 clean:
 	cargo clean
