@@ -12,3 +12,6 @@ auto-signature-help = false
 
 [editor.whitespace]
 render = "after-whitespace"
+
+[keys.normal]
+X = "select_line_above"
