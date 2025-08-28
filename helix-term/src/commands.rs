@@ -485,6 +485,8 @@ impl MappableCommand {
         earlier, "Move backward in history",
         later, "Move forward in history",
         commit_undo_checkpoint, "Commit changes to new checkpoint",
+        undo_selection, "Undo selection",
+        redo_selection, "Redo selection",
         yank, "Yank selection",
         yank_to_clipboard, "Yank selections to clipboard",
         yank_to_primary_clipboard, "Yank selections to primary clipboard",
@@ -4563,6 +4565,33 @@ fn later(cx: &mut Context) {
 fn commit_undo_checkpoint(cx: &mut Context) {
     let (view, doc) = current!(cx.editor);
     doc.append_changes_to_history(view);
+}
+
+fn undo_selection(cx: &mut Context) {
+    let count = cx.count();
+    let config = cx.editor.config();
+
+    let (view, doc) = current!(cx.editor);
+    if !doc.undo_selection(view, count) {
+        cx.editor
+            .set_status("Already at oldest selection (since last edit)");
+    }
+
+    let (view, doc) = current!(cx.editor);
+    view.ensure_cursor_in_view_center(doc, config.scrolloff);
+}
+
+fn redo_selection(cx: &mut Context) {
+    let count = cx.count();
+    let config = cx.editor.config();
+
+    let (view, doc) = current!(cx.editor);
+    if !doc.redo_selection(view, count) {
+        cx.editor.set_status("Already at newest selection");
+    }
+
+    let (view, doc) = current!(cx.editor);
+    view.ensure_cursor_in_view_center(doc, config.scrolloff);
 }
 
 // Yank / Paste
