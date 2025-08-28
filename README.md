@@ -2,7 +2,6 @@
 
 My fork of helix editor.
 Currently has additional feature to highlight trailing whitespace.
-And will install my config files.
 
 ## Build:
 
@@ -12,4 +11,7 @@ nix develop --extra-experimental-features 'nix-command flakes'
 
 make clean
 make install
+
+# Warning installs my personal config files
+make install-config
 ```
