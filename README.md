@@ -1,7 +1,10 @@
 # Helix
 
-My fork of helix editor.
-Currently has additional feature to highlight trailing whitespace.
+Fork of helix editor with additional features implemented:
+
+- Highlight trailing whitespace
+- Auto reload files if changed on disk
+- Undo/Redo selection
 
 ## Build:
 

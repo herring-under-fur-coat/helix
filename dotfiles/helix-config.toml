@@ -13,5 +13,10 @@ auto-signature-help = false
 [editor.whitespace]
 render = "after-whitespace"
 
+[editor.auto-reload]
+focus-gained = true
+periodic.enable = true
+periodic.interval = 1000
+
 [keys.normal]
 X = "select_line_above"
