@@ -19,4 +19,4 @@ periodic.enable = true
 periodic.interval = 1000
 
 [keys.normal]
-X = "select_line_above"
+X = "extend_line_above"

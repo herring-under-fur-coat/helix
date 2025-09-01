@@ -5,6 +5,7 @@ Fork of helix editor with additional features implemented:
 - Highlight trailing whitespace
 - Auto reload files if changed on disk
 - Undo/Redo selection
+- Fix `x` behaviour on empty lines
 
 ## Build:
 
